@@ -1,12 +1,10 @@
 fn main() {
-    let mut x = 19;
-    let msg = "Hello, world!";
-    
+    let x = 19;
+    let n: u64 = 09;
+    let f: f32 = 9.6;
+    let b: bool = true;
+    let c: char = 'a';
+    let t: (i32, f64, u8) = (500, 6.4, 1);
 
-    println!("x = {}", x);
-    println!("{}", msg);
 
-    // x = x - 3;
-
-    // println!("x = {}", x);
 }
