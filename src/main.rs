@@ -1,10 +1,17 @@
 fn main() {
-    let x = 19;
-    let n: u64 = 09;
-    let f: f32 = 9.6;
-    let b: bool = true;
-    let c: char = 'a';
-    let t: (i32, f64, u8) = (500, 6.4, 1);
+    let x = 10;
 
+    if x == 9
+    {
+        println!("If condition is working ")
+    }
+    else if x ==  10
+    {
+        println!("Else if condition is working ")
+    }
+    else
+    {
+        println!("Else condition is working ")
+    }
 
 }
