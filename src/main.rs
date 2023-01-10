@@ -1,14 +1,13 @@
 fn main() {
-    let x = 19;
+    let mut x = 19;
 
     {
-        let x = 16;
 
+        let dom= &mut x;
+        *dom += 1;
+
+        println!("x1 = {}", dom)
     }
-    
-    let x = "Hello, world!";
 
-    let x = 96;
-
-    println!("x = {}", x);
+    println!("x2 = {}", x);
 }
