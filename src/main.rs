@@ -1,16 +1,7 @@
-struct Color {
-    red: u8,
-    green: u8,
-    blue: u8,
-}
 fn main() {
-    let blue = Color { red: 0, green: 0, blue: 255 };
+    let numbers = [1, 2, 3, 4, 5];
 
-    print_color(&blue);
-    
-
-}
-
-fn print_color(c: &Color){
-    println!("Color - R:{} G:{} B:{}", c.red, c.green, c.blue);
+    for n in numbers.iter() {
+        println!("the value is: {}", n);
+    }
 }
