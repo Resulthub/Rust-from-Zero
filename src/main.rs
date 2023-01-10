@@ -1,13 +1,12 @@
+struct Color {
+    red: u8,
+    green: u8,
+    blue: u8,
+}
 fn main() {
-    let mut x = 19;
+   let mut bg = Color { red: 255, green: 255, blue: 255 };
 
-    {
+   bg.green = 45; // error: cannot assign to immutable field `bg.blue`
 
-        let dom= &mut x;
-        *dom += 1;
-
-        println!("x1 = {}", dom)
-    }
-
-    println!("x2 = {}", x);
+   println!("The background color is ({}, {}, {})", bg.red, bg.green, bg.blue);
 }
