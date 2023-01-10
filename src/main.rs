@@ -1,19 +1,7 @@
-enum Direction {
-    Up,
-    Down,
-    Left,
-    Right,
-}
-    
+const MAXIMUM_NUMBER: u32 = 10;    
 fn main() {
     
-    let player_direction: Direction = Direction::Up;
-
-    match player_direction {
-        Direction::Up => println!("Player is moving up"),
-        Direction::Down => println!("Player is moving down"),
-        Direction::Left => println!("Player is moving left"),
-        Direction::Right => println!("Player is moving right"),
-    }
-
+   for n in 0..MAXIMUM_NUMBER {
+       println!("n is {}", n);
+   }
 }
