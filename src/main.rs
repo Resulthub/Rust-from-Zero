@@ -1,8 +1,16 @@
-struct Color (u8, u8, u8);
+struct Color {
+    red: u8,
+    green: u8,
+    blue: u8,
+}
 fn main() {
-    let mut red = Color(255, 0, 0);
+    let blue = Color { red: 0, green: 0, blue: 255 };
 
-    red.1 = 30;
+    print_color(&blue);
+    
 
-    println!("red is {}, {}, {}", red.0, red.1, red.2);
+}
+
+fn print_color(c: &Color){
+    println!("Color - R:{} G:{} B:{}", c.red, c.green, c.blue);
 }
