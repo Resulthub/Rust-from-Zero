@@ -2,9 +2,13 @@ fn main() {
     let x = 19;
 
     {
-        let y = 16;
+        let x = 16;
 
-        println!("x = {}, y = {}", x, y);
     }
     
+    let x = "Hello, world!";
+
+    let x = 96;
+
+    println!("x = {}", x);
 }
