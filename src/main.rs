@@ -1,10 +1,15 @@
+use std::io;
 fn main() {
-    let number = 1;
+    let mut input = String::new();
 
-    match number {
-        1 => println!("it is one!"),
-        2 => println!("there is two of them!"),
-        10 | 11 => println!("it is 10 or 11!"),
-        _ => println!("it is something else!"),
+    println!("Hey mate! Say something to me!");
+
+    match io::stdin().read_line(&mut input){
+        Ok(_)
+        => {
+            println!("You said: {}", input);
+        },
+        Err(e) => println!("Error: {}", e),
     }
+
 }
