@@ -1,23 +1,20 @@
-struct Rectangle {
-    width: u32,
-    height: u32,
-}
-
-impl Rectangle {
-    fn print_description(&self) {
-        println!("Rectangle: { } x { }", self.width, self.height);
-    }
-
-    fn is_square(&self) -> bool {
-        self.width == self.height
-    }
-}
-
 fn main() {
-    let my_rect = Rectangle { width: 30, height: 30 };
+    let mut my_string = String::from("how's it going? my name is Sadik");
 
-    // my_rect.print_description();
-    println!("Rectangle is a square: {}", my_rect.is_square());
+    //Length of the string
+    println!("Length: {}", my_string.len());
 
+    //Is the string empty?
+    println!("String is empty: {}", my_string.is_empty());
 
+    for token in my_string.split_whitespace() {
+        println!("{}", token);
+    }
+
+    //Contains
+    println!("Does the string Contains 'Sadik' {}", my_string.contains("Sadik"));
+
+    my_string.push_str(" and I am learning Rust");
+
+    println!("{}", my_string);
 }
