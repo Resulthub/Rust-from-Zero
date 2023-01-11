@@ -1,10 +1,10 @@
-use std::env;
+use std::fs::File;
+use std::io::prelude::*;
+
 fn main() {
-   let args: Vec<String> = env::args().collect();
+   let mut file = File::create("output.txt")
+         .expect("Could not create file!");
 
-//    for argument in args.iter(){
-//         println!("{}", argument);
-//    }
-
-    println!(" {}", args[1])
+    file.write_all(b"Hello, world!")
+            .expect("Could not write to file!");
 }
