@@ -1,7 +1,23 @@
-fn main() {
-    let numbers = [1, 2, 3, 4, 5];
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
 
-    for n in numbers.iter() {
-        println!("the value is: {}", n);
+impl Rectangle {
+    fn print_description(&self) {
+        println!("Rectangle: { } x { }", self.width, self.height);
     }
+
+    fn is_square(&self) -> bool {
+        self.width == self.height
+    }
+}
+
+fn main() {
+    let my_rect = Rectangle { width: 30, height: 30 };
+
+    // my_rect.print_description();
+    println!("Rectangle is a square: {}", my_rect.is_square());
+
+
 }
