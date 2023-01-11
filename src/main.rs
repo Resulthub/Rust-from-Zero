@@ -1,14 +1,14 @@
+use std::fs::File;
+use std::io::prelude::*;
+
 fn main() {
-    let mut my_vector = vec![1, 2, 3, 4, 5];
+    let mut file = File::open("./info.txt").expect("Can't open file!");
 
-    my_vector.push(49);
+    let mut contents = String::new();
 
-    my_vector.remove(0);
+    file.read_to_string(&mut contents)
+        .expect("Can't read file!");
 
-    println!("{:?}", my_vector);
-
-    for number in my_vector.iter(){
-        println!("{}", number);
-    }
+    println!("File contents: \n\n{}", contents);
 
 }
