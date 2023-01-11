@@ -6,8 +6,7 @@ fn main() {
 
     let mut contents = String::new();
 
-    file.read_to_string(&mut contents)
-        .expect("Can't read file!");
+    file.read_to_string(&mut contents).expect("Oops! Can not read file........");
 
     println!("File contents: \n\n{}", contents);
 
