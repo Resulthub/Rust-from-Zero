@@ -1,37 +1,10 @@
-struct Person {
-    name: String,
-    age: u8,
-}
-
-trait HasVoiceBox {
-    //speak
-    fn speak(&self);
-
-    //check if can speak
-    fn can_speak(&self) -> bool;
-}
-
-
-impl HasVoiceBox for Person {
-    fn speak(&self) {
-        println!("Hello my name is {}", self.name);
-    }
-
-    fn can_speak(&self) -> bool {
-        // if self.age > 0 {
-        //     return true;
-        // }
-            if self.age > 0 {
-              return  true
-
-            } return false
-    }
-}
 fn main() {
-    let person = Person {
-        name: String::from("Sadik"),
-        age: 0,
-    };
+    let number = 1;
 
-    println!("Can {} speak? {}", person.name, person.can_speak());
+    match number {
+        1 => println!("it is one!"),
+        2 => println!("there is two of them!"),
+        10 | 11 => println!("it is 10 or 11!"),
+        _ => println!("it is something else!"),
+    }
 }
