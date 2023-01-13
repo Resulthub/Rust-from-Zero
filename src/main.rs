@@ -1,16 +1,22 @@
-extern crate regex;
-use regex::Regex;
-
-
-fn main(){
-    let re = Regex::new(r"(\w{5})").unwrap();
-
-    let text = "hello";
-
-    // println!("Found match? {}", re.is_match(text));
-    match re.captures(text) {
-        // Some(caps) => println!("Found match: {}", caps.get(0).unwrap().as_str()),
-        Some(caps) => println!("Found match: {}", &caps[0]),
-        None => println!("No match found.....")
+mod code{
+    fn chicken() {
+        println!("Chicken !!");
     }
+
+    pub fn print_message() {
+        chicken();
+        println!("How's it going today?");
+    }
+
+    pub mod water {
+        pub fn print_message() {
+            println!("Water is wet");
+        }
+    }
+
+}
+fn main(){
+    code::print_message();
+    
+    code::water::print_message();
 }
