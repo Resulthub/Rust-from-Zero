@@ -1,19 +1,22 @@
-enum Direction {
-    Up,
-    Down,
-    Left,
-    Right,
-}
-    
 fn main() {
-    
-    let player_direction: Direction = Direction::Up;
+    // let name = String::from("Sadik kabir Ahmad");
 
-    match player_direction {
-        Direction::Up => println!("Player is moving up"),
-        Direction::Down => println!("Player is moving down"),
-        Direction::Left => println!("Player is moving left"),
-        Direction::Right => println!("Player is moving right"),
+    // println!("Character at index 6: {}", match name.chars().nth(6){
+    //     Some(c) => c.to_string(),
+    //     None => "Not found".to_string(),
+    // })
+
+    println!("Occupation is {}", match get_occupation("Ahmad"){
+        Some(r) => r,
+        None => "Not occupation found",
+    })
+
+}
+
+fn get_occupation(name: &str) -> Option<&str> {
+    match name {
+        "Sadik" => Some("Programmer"),
+        "Kabir" => Some("Programmer"),
+        _ => None,
     }
-
 }
