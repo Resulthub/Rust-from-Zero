@@ -1,27 +1,38 @@
-use std::process::Command;
+extern crate serde_json;
+extern crate serde;
+#[macro_use]
+
+extern crate serde_derive;
+
+// use serde_json::Value as JsonValue;
+
+#[derive(Serialize, Deserialize, Debug)]
+struct Person {
+    name: String,
+    age: u8,
+    is_male: bool
+}
 
 fn main() {
 
-    //python file.py
+  let json_str = r#"
+    {
+      "name": "John Doe",
+      "age": 43,
+      "is_male": true
+    }"#;
 
-    let mut cmd = Command::new("python");
-    cmd.arg("./file.py");
+    let res = serde_json::from_str(json_str);
 
-    // Execute the command
+    if res.is_ok() {
+        let p: Person = res.unwrap();
+        println!("The name is {}", p.name); 
+        println!("The age is {}", p.age); 
+        println!("Are they male? {}", p.is_male); 
 
-    match cmd.output() {
-        Ok(o) => {
-            // Print the output
-            unsafe{
 
-                println!("The output was: {}", String::from_utf8_unchecked(o.stdout));
-            }
-        }
-
-        Err(e) => {
-            // Print the error
-            println!("There was an error! {}", e)
-        }
+    }else{
+        println!("Sorry Could not parse the json:")
     }
 
 

@@ -1,1 +1,0 @@
-print 'Hello I am Sadik from Python in file.py'
