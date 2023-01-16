@@ -1,21 +1,28 @@
-#![allow(dead_code)]
-
-enum Day {
-    Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
-}
-
-impl Day {
-    fn is_weekday(&self) -> bool {
-        match *self {
-            Day::Saturday | Day::Sunday => false,
-            _ => true
-        }
-    }
-}
+use std::process::Command;
 
 fn main() {
 
-    let d = Day::Sunday;
+    //python file.py
 
-    println!("Is Sunday a weekday? {}", d.is_weekday());
+    let mut cmd = Command::new("python");
+    cmd.arg("./file.py");
+
+    // Execute the command
+
+    match cmd.output() {
+        Ok(o) => {
+            // Print the output
+            unsafe{
+
+                println!("The output was: {}", String::from_utf8_unchecked(o.stdout));
+            }
+        }
+
+        Err(e) => {
+            // Print the error
+            println!("There was an error! {}", e)
+        }
+    }
+
+
 }
